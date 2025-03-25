@@ -1,0 +1,248 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  background-color: #ffe6f1; /* Soft pink background */
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  line-height: 1.6;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+    input {
+        width: 80%; /* Zabezpečí pekné prispôsobenie na mobil */
+        font-size: 14px; /* Jemne menší text */
+    }
+}
+
+/* Flying Hearts Animation */
+@keyframes fly-hearts {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+body::before,
+body::after,
+body .heart {
+  content: "❤️";
+  font-size: 3rem;
+  position: absolute;
+  animation: fly-hearts 5s linear infinite;
+}
+
+body::before {
+  left: 10%;
+  top: 10%;
+  animation-duration: 4s;
+}
+
+body::after {
+  right: 10%;
+  top: 25%;
+  animation-duration: 6s;
+}
+
+body .heart {
+  left: 30%;
+  top: 50%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+/* Container Styling */
+.container {
+  max-width: 90%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95); /* Soft white background */
+  padding: 25px;
+  border-radius: 20px; /* Rounded corners for a friendly feel */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft, subtle shadow */
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Heading */
+h1 {
+  font-size: 1.2rem;
+  color: #ff66b2; /* Soft, romantic pink */
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+p {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Image Styling */
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 5px solid #ff66b2; /* Pink border for a cohesive look */
+}
+/* Kontajner pre switch */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Switch Štýl */
+.switch {
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 9999px;
+  background-color: rgba(100, 116, 139, 0.377);
+  transition: all .3s ease;
+}
+
+.switch:checked {
+  background-color: rgba(236, 72, 153, 1);
+}
+
+.switch::before {
+  position: absolute;
+  content: "";
+  left: calc(1.5rem - 1.6rem);
+  top: calc(1.5rem - 1.6rem);
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+  border: 1px solid rgba(100, 116, 139, 0.527);
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.327);
+  transition: all .3s ease;
+}
+
+.switch:hover::before {
+  box-shadow: 0 0 0px 8px rgba(0, 0, 0, .15);
+}
+
+.switch:checked:hover::before {
+  box-shadow: 0 0 0px 8px rgba(236, 72, 153, .15);
+}
+
+.switch:checked:before {
+  transform: translateX(100%);
+  border-color: rgba(236, 72, 153, 1);
+}
+
+/* Štýl pre tlačidlo */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #ff94c2;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:disabled {
+    background-color: #ff94c2;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #ff5f9e;
+}
+
+/* Button Styling */
+button {
+  background-color: #ff66b2; /* Sweet pink */
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ff3385; /* Darker pink on hover */
+  transform: scale(1.02);
+}
+
+
+.hint {
+  font-size: 1rem;
+  color: #ff66b2;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#hint-text {
+  font-size: 1rem;
+  color: #ff94c2;
+  margin-top: 10px;
+  display: none;
+  cursor: pointer;
+}
+.abc{font-size: 0.7rem;
+  color: #3D3D3D;
+  padding-bottom: -200px;
+}
+input {
+    width: 200px;
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #ff94c2;
+    border-radius: 25px; 
+    background: #fff0f6;
+    color: #d63384;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(255, 145, 175, 0.3);
+    transition: 0.3s ease-in-out;
+}
+input:focus {
+    border-color: #ff5f9e; /* Intenzívnejšia ružová pri kliknutí */
+    box-shadow: 0 4px 15px rgba(255, 90, 145, 0.4);
+    background: #ffe4ec;
+}
+input::placeholder {
+    color: #ff94c2;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}

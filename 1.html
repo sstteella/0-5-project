@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0,5 Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>#1 quest</h2>
+        <p>Zadaj 4-miestny kód pre prvý quest</p>
+        <input type="text" id="codeInput2" oninput="checkPassword('codeInput2', '1310', 'next')">
+        <p class="hint" onclick="showHint()">Kliknutím sem získaš nápovedu!</p>
+        <p id="hint-text" class="hidden">dátum ktorý to celé odštartoval ♡</p>
+        <button id="next" disabled onclick="location.href='2.html'">Ďalej</button>
+    </div>
+</body>
+</html>
